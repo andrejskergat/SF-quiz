@@ -1052,8 +1052,9 @@ function computeQualifies(){
 // only ever contributed to an aggregate per-area score (quiz_score_*) --
 // their individual answers were never actually sent. This builds one
 // field per scored question, keyed by area + position within that area
-// (e.g. quiz_found_q1, quiz_found_q2...), so every answer in the quiz is
-// captured, not just the qualifying ones.
+// (e.g. quiz_found_q1, quiz_found_q2...), holding just the selected
+// answer text, so every answer in the quiz is captured, not just the
+// qualifying ones.
 function buildScoredAnswerFields(){
   const fields = {};
   const areaCounters = {};
@@ -1062,7 +1063,7 @@ function buildScoredAnswerFields(){
     areaCounters[q.area] = (areaCounters[q.area]||0) + 1;
     const fieldKey = `quiz_${q.area}_q${areaCounters[q.area]}`;
     const ans = state.answers[i];
-    fields[fieldKey] = ans===null ? null : `${q.text} — ${optLabel(q,ans)}`;
+    fields[fieldKey] = ans===null ? null : optLabel(q,ans);
   });
   return fields;
 }
