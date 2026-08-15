@@ -771,6 +771,18 @@ function optPts(q,i){
 /* ============================================================
    RENDERERS
    ============================================================ */
+/* ============================================================
+   OUTER-FRAME AUTO RESIZE
+   If this whole quiz is itself embedded inside another iframe or
+   popup (e.g. a GHL/Elementor popup on the site), that host
+   container has no way to know when this page's own content height
+   changes, most importantly once the nested booking calendar
+   expands through its own steps (date -> time slots -> enter
+   details). This continuously reports this page's real height to
+   window.parent via postMessage, in a few of the common formats
+   host tools tend to listen for, so the outer frame can resize to
+   match at all times rather than clipping.
+   ============================================================ */
 function render(){
   if(state.screen==="intro")      renderIntro();
   else if(state.screen==="lead")  renderLead();
@@ -834,6 +846,18 @@ function renderQuestion(i){
       state.answers[i]=idx;
       app.querySelectorAll(".option").forEach(b=>b.setAttribute("aria-checked", b.dataset.idx===String(idx)?"true":"false"));
       document.getElementById("next").disabled=false;
+
+      // Auto-advance shortly after picking an answer, so the selection is
+      // visible for a beat before moving on. The Next/Back buttons stay as
+      // a manual fallback (e.g. if someone wants to review/change first).
+      // The state.screen check guards against firing after the person has
+      // already navigated away (via Back, or a second quick option click).
+      setTimeout(()=>{
+        if(state.screen!==i) return;
+        if(i===total-1) state.screen="lead";
+        else state.screen=i+1;
+        render();
+      }, 320);
     });
   });
 
