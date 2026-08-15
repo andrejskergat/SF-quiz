@@ -1046,6 +1046,27 @@ function computeQualifies(){
   return FIT_TYPES.includes(type) && FIT_SPEND.includes(spend);
 }
 
+// The 7 unscored qualifying questions (centreType, locations, ads, spend,
+// whoHandles, aiUse, intent) each have their own key already and get sent
+// individually via getAnswerText(). The other 16 questions are scored and
+// only ever contributed to an aggregate per-area score (quiz_score_*) --
+// their individual answers were never actually sent. This builds one
+// field per scored question, keyed by area + position within that area
+// (e.g. quiz_found_q1, quiz_found_q2...), so every answer in the quiz is
+// captured, not just the qualifying ones.
+function buildScoredAnswerFields(){
+  const fields = {};
+  const areaCounters = {};
+  QUESTIONS.forEach((q,i)=>{
+    if(!q.scored) return;
+    areaCounters[q.area] = (areaCounters[q.area]||0) + 1;
+    const fieldKey = `quiz_${q.area}_q${areaCounters[q.area]}`;
+    const ans = state.answers[i];
+    fields[fieldKey] = ans===null ? null : `${q.text} — ${optLabel(q,ans)}`;
+  });
+  return fields;
+}
+
 /* ============================================================
    EMAIL-READY RESULTS HTML
    Built so it can be dropped straight into a GHL "Send Email" step,
@@ -1176,7 +1197,8 @@ function submitPayload(){
       quiz_lowest_area:sc.lowest,
       quiz_qualifies:qualifies,
       quiz_completed_at:payload.timestamp,
-      results_html:buildResultsEmailHtml(sc, qualifies)
+      results_html:buildResultsEmailHtml(sc, qualifies),
+      ...buildScoredAnswerFields()
     };
     fetch(GHL_WEBHOOK_URL,{
       method:"POST",
