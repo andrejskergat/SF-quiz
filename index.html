@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How effective is your centre's enrolment marketing?</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '274358917177386');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=274358917177386&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<style>
+  :root{
+    --ink:#1A2E40;
+    --cream:#F5F0E6;
+    --marigold:#E8A33D;
+    --stone:#8C8579;
+    --clay:#D89A8A;
+    --ink-fill:rgba(26,46,64,0.07);
+    --ink-track:rgba(26,46,64,0.12);
+    --ink-border:rgba(26,46,64,0.18);
+    --gutter:24px;
+  }
+
+  *{box-sizing:border-box;}
+
+  html,body{margin:0;padding:0;}
+
+  body{
+    background-color:var(--cream);
+    color:var(--ink);
+    font-family:'Inter',system-ui,sans-serif;
+    font-size:17px;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    min-height:100vh;
+  }
+
+  /* Subtle film-grain overlay */
+  body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:0;
+    pointer-events:none;
+    opacity:0.05;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .app{
+    position:relative;
+    z-index:1;
+    max-width:560px;
+    margin:0 auto;
+    min-height:100vh;
+    padding:0 var(--gutter);
+    display:flex;
+    flex-direction:column;
+  }
+
+  .screen{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    padding:32px 0 40px;
+    animation:fade 0.35s ease;
+  }
+  @keyframes fade{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:none;}}
+
+  /* Typography */
+  .eyebrow{
+    font-family:'JetBrains Mono',monospace;
+    font-size:12px;
+    font-weight:600;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--stone);
+    margin:0 0 14px;
+  }
+
+  h1{
+    font-family:'Fraunces',serif;
+    font-weight:500;
+    font-size:34px;
+    line-height:1.12;
+    letter-spacing:-0.01em;
+    margin:0 0 14px;
+  }
+
+  .subtitle{
+    color:var(--stone);
+    font-size:16px;
+    margin:0 0 28px;
+  }
+
+  .question-text{
+    font-family:'Fraunces',serif;
+    font-weight:500;
+    font-size:26px;
+    line-height:1.2;
+    margin:0 0 24px;
+  }
+  .question-text em{font-style:italic;}
+
+  .intro-line{margin:0 0 16px;}
+
+  ul.bullets{
+    list-style:none;
+    margin:0 0 26px;
+    padding:0;
+  }
+  ul.bullets li{
+    position:relative;
+    padding-left:22px;
+    margin-bottom:12px;
+  }
+  ul.bullets li::before{
+    content:"";
+    position:absolute;
+    left:2px;
+    top:11px;
+    width:6px;
+    height:6px;
+    border-radius:50%;
+    background:var(--ink);
+  }
+
+  .meta{
+    font-family:'JetBrains Mono',monospace;
+    font-size:12px;
+    letter-spacing:0.06em;
+    color:var(--stone);
+    margin:0 0 26px;
+  }
+
+  /* Buttons */
+  .btn{
+    font-family:'Inter',sans-serif;
+    font-size:16px;
+    font-weight:600;
+    border-radius:14px;
+    padding:16px 24px;
+    border:none;
+    cursor:pointer;
+    transition:transform 0.12s ease,background 0.2s ease,opacity 0.2s ease;
+    width:100%;
+  }
+  .btn-primary{
+    background:var(--marigold);
+    color:var(--ink);
+  }
+  .btn-primary:hover{transform:translateY(-1px);}
+  .btn-primary:disabled{
+    background:var(--ink-track);
+    color:var(--stone);
+    cursor:not-allowed;
+    transform:none;
+  }
+  .btn-ghost{
+    background:transparent;
+    color:var(--ink);
+    border:1.5px solid var(--ink-border);
+    width:auto;
+    padding:14px 22px;
+  }
+  .btn-ghost:hover{background:var(--ink-fill);}
+
+  .nav-row{
+    display:flex;
+    gap:12px;
+    align-items:center;
+    margin-top:auto;
+    padding-top:28px;
+  }
+  .nav-row .btn-primary{flex:1;}
+
+  :focus-visible{
+    outline:3px solid var(--marigold);
+    outline-offset:3px;
+    border-radius:6px;
+  }
+
+  /* Progress */
+  .progress-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:10px;
+  }
+  .progress-count{
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px;
+    font-weight:600;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--stone);
+  }
+  .progress-track{
+    height:5px;
+    background:var(--ink-track);
+    border-radius:99px;
+    overflow:hidden;
+    margin-bottom:34px;
+  }
+  .progress-fill{
+    height:100%;
+    background:var(--ink);
+    border-radius:99px;
+    transition:width 0.4s ease;
+  }
+
+  /* Options */
+  .options{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+  .option{
+    display:flex;
+    align-items:flex-start;
+    gap:14px;
+    text-align:left;
+    width:100%;
+    background:transparent;
+    border:1.5px solid var(--ink-border);
+    border-radius:14px;
+    padding:16px 18px;
+    font-family:'Inter',sans-serif;
+    font-size:16px;
+    line-height:1.4;
+    color:var(--ink);
+    cursor:pointer;
+    transition:border-color 0.15s ease,background 0.15s ease;
+  }
+  .option:hover{border-color:var(--ink);}
+  .option[aria-checked="true"]{
+    border-color:var(--ink);
+    background:var(--ink-fill);
+  }
+  .dot{
+    flex:0 0 auto;
+    width:20px;
+    height:20px;
+    border-radius:50%;
+    border:2px solid var(--ink-border);
+    margin-top:1px;
+    position:relative;
+    transition:border-color 0.15s ease;
+  }
+  .option[aria-checked="true"] .dot{border-color:var(--ink);}
+  .option[aria-checked="true"] .dot::after{
+    content:"";
+    position:absolute;
+    inset:3px;
+    border-radius:50%;
+    background:var(--ink);
+  }
+
+  /* Form */
+  .field{margin-bottom:18px;}
+  .field label{
+    display:block;
+    font-size:14px;
+    font-weight:600;
+    margin-bottom:7px;
+  }
+  .field .opt-tag{color:var(--stone);font-weight:400;}
+  .field .req{color:var(--clay);font-weight:400;}
+  .field input{
+    width:100%;
+    font-family:'Inter',sans-serif;
+    font-size:16px;
+    padding:14px 16px;
+    border:1.5px solid var(--ink-border);
+    border-radius:12px;
+    background:rgba(255,255,255,0.35);
+    color:var(--ink);
+  }
+  .field input:focus{outline:3px solid var(--marigold);outline-offset:1px;border-color:var(--ink);}
+  .field input.invalid{border-color:var(--clay);}
+  .field .err{
+    color:var(--clay);
+    font-size:13px;
+    margin-top:6px;
+    display:none;
+  }
+  .field .err.show{display:block;}
+  .consent{
+    font-size:13px;
+    color:var(--stone);
+    line-height:1.5;
+    margin:20px 0 4px;
+  }
+
+  /* Result */
+  .result-overall{
+    font-size:17px;
+    line-height:1.55;
+    margin:18px 0 32px;
+  }
+  .bars{margin:0 0 36px;}
+  .bar-row{margin-bottom:18px;}
+  .bar-label{
+    font-size:14px;
+    font-weight:600;
+    margin-bottom:7px;
+  }
+  .bar-track{
+    height:9px;
+    background:var(--ink-track);
+    border-radius:99px;
+    overflow:hidden;
+  }
+  .bar-fill{
+    height:100%;
+    background:var(--ink);
+    border-radius:99px;
+    width:var(--w,0);
+  }
+
+  .section-title{
+    font-family:'JetBrains Mono',monospace;
+    font-size:12px;
+    font-weight:600;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--stone);
+    margin:34px 0 14px;
+  }
+  .result h2.block-area{
+    font-family:'Fraunces',serif;
+    font-weight:500;
+    font-size:22px;
+    margin:0 0 10px;
+  }
+  .result p{margin:0 0 14px;}
+  .strength-item{margin-bottom:22px;}
+  .strength-item h3{
+    font-family:'Fraunces',serif;
+    font-weight:500;
+    font-size:19px;
+    margin:0 0 8px;
+  }
+
+  .closing{
+    background:var(--ink-fill);
+    border-radius:18px;
+    padding:26px 22px;
+    margin:34px 0 0;
+  }
+  .closing h2{
+    font-family:'Fraunces',serif;
+    font-weight:500;
+    font-size:22px;
+    margin:0 0 12px;
+  }
+  .closing p{margin:0 0 16px;}
+  .closing .btn-primary{margin-top:4px;}
+  .closing a.btn-primary{
+    display:block;
+    text-align:center;
+    text-decoration:none;
+  }
+
+  .honest-note{
+    font-size:13px;
+    color:var(--stone);
+    line-height:1.55;
+    margin:32px 0 0;
+  }
+
+  @media (max-width:380px){
+    h1{font-size:28px;}
+    .question-text{font-size:23px;}
+    body{font-size:16px;}
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    .screen{animation:none;}
+    .progress-fill,.btn-primary{transition:none;}
+  }
+</style>
+</head>
+<body>
+<div class="app" id="app"></div>
+
+<script>
+/* ============================================================
+   CONFIG  —  the owner edits these
+   ============================================================ */
+
+// Booking / WhatsApp link for the offer button. Placeholder for now.
+const BOOKING_LINK = "https://links.socialfin.co/widget/bookings/30-min-review-calendar";
+
+// Make.com webhook. Leave empty to only console.log the payload.
+// When set, the payload is also POSTed here. (We route through Make.com
+// because posting straight to the CRM from the browser hits CORS limits;
+// Make accepts cross-origin posts and maps the fields into the CRM.)
+const MAKE_WEBHOOK_URL = "";
+
+// GHL inbound webhook URL (Workflows > Inbound Webhook trigger). Leave empty
+// to skip. When set, a flat payload is POSTed here on quiz completion so
+// every answer lands as a custom field on the matching contact.
+// If the browser fetch gets blocked by CORS, route this through Make.com
+// instead, the same way MAKE_WEBHOOK_URL is used above.
+const GHL_WEBHOOK_URL = "https://services.leadconnectorhq.com/hooks/ilMCGuP8N4rpEAmB8mEm/webhook-trigger/F0MZwGdsvYbTwQ8QyyC2";
+
+// Values that count toward the `qualifies` flag. Easy to change later.
+const FIT_TYPES = [
+  "Preschool (childcare or kindergarten)",
+  "Enrichment centre (arts, music, sports)",
+  "Tuition centre",
+  "Student care"
+];
+const FIT_SPEND = ["$1,000 to $3,000", "More than $3,000"];
+
+/* ============================================================
+   AREAS
+   ============================================================ */
+const AREAS = [
+  { key:"found",      name:"Getting found",                          max:9,  cutoff:6 },
+  { key:"trust",      name:"Trust and reputation",                   max:9,  cutoff:6 },
+  { key:"enquiries",  name:"Handling enquiries",                     max:12, cutoff:8 },
+  { key:"signups",    name:"Turning interest into sign-ups",         max:9,  cutoff:6 },
+  { key:"keeping",    name:"Keeping families and earning referrals", max:9,  cutoff:6 }
+];
+
+/* ============================================================
+   QUESTIONS  (verbatim copy)
+   scored questions carry `area` + per-option `pts`
+   ============================================================ */
+const QUESTIONS = [
+  // 1
+  { scored:false, key:"centreType",
+    text:"What kind of centre do you run?",
+    options:[
+      "Preschool (childcare or kindergarten)",
+      "Enrichment centre (arts, music, sports)",
+      "Tuition centre",
+      "Student care",
+      "Others"
+    ]},
+  // 2
+  { scored:false, key:"locations",
+    text:"How many locations do you have?",
+    options:["Just one","Two","Three or more"]},
+  // 3
+  { scored:true, area:"found",
+    text:"Where do most of your new families first hear about your centre?",
+    options:[
+      ["A mix of online and word of mouth",3],
+      ["Mostly online, from ads, search or social",2],
+      ["Almost all word of mouth and referrals",1],
+      ["Not sure",0]
+    ]},
+  // 4
+  { scored:true, area:"found",
+    text:"Do you have a Google Business Profile, the listing with your map pin and reviews that shows when parents search?",
+    options:[
+      ["Yes, and we keep it current",3],
+      ["Yes, but we rarely touch it",2],
+      ["Not sure if we have one",1],
+      ["No",0]
+    ]},
+  // 5
+  { scored:true, area:"found",
+    text:"When someone asks an AI tool like ChatGPT for a good centre in your area, would yours come up?",
+    options:[
+      ["Yes, we've made sure of it",3],
+      ["Possibly, we're not certain",2],
+      ["Probably not",1],
+      ["I didn't know that was a thing",0]
+    ]},
+  // 6
+  { scored:true, area:"trust",
+    text:"If a parent checked your reviews online, what would they see?",
+    options:[
+      ["Plenty of recent, positive reviews",3],
+      ["A handful of reviews",2],
+      ["Not much",1],
+      ["Not sure",0]
+    ]},
+  // 7
+  { scored:true, area:"trust",
+    text:"How much of your enrolment comes through referrals?",
+    options:[
+      ["Most of it, more than half",3],
+      ["A good share, maybe a quarter to half",2],
+      ["A small part, under a quarter",1],
+      ["Hardly any, or not sure",0]
+    ]},
+  // 8
+  { scored:true, area:"trust",
+    text:"If a parent checks your social media, how does it look?",
+    options:[
+      ["Active and updated, we post at least once a week",3],
+      ["Posting on and off",2],
+      ["Pretty neglected",1],
+      ["We don't really have one",0]
+    ]},
+  // 9
+  { scored:true, area:"enquiries",
+    text:"When a parent sends an enquiry, how does it usually get handled?",
+    options:[
+      ["We have a set way we reply and keep track",3],
+      ["One of us gets to it when we can",2],
+      ["It's a bit here and there",1],
+      ["It depends on the day",0]
+    ]},
+  // 10
+  { scored:true, area:"enquiries",
+    text:"How do you keep track of enquiries and follow-ups?",
+    options:[
+      ["We have a CRM",3],
+      ["A spreadsheet",2],
+      ["Mostly memory",1],
+      ["We don't really track it",0]
+    ]},
+  // 11
+  { scored:true, area:"enquiries",
+    text:"How soon does a parent usually hear back after they enquire?",
+    options:[
+      ["Within the hour",3],
+      ["Same day",2],
+      ["Within a day or two",1],
+      ["It varies a lot",0]
+    ]},
+  // 12  (five options, two worth 3)
+  { scored:true, area:"enquiries",
+    text:"A lot of parents enquire in the evening or at weekends. What usually happens to those?",
+    options:[
+      ["They get an instant auto-reply, then we follow up",3],
+      ["An AI assistant in our system replies across all channels, any time",3],
+      ["One of us usually replies, even after hours",2],
+      ["They wait until the next working day",1],
+      ["Sometimes it takes us a few days",0]
+    ]},
+  // 13
+  { scored:true, area:"signups",
+    text:"Of the parents who enquire or visit, how many go on to enrol?",
+    options:[
+      ["Most of them",3],
+      ["About half",2],
+      ["A small number",1],
+      ["We don't really track it",0]
+    ]},
+  // 14
+  { scored:true, area:"signups",
+    text:"What tends to happen with parents who enquire but don't sign up straight away?",
+    options:[
+      ["We have a set way of following up with them",3],
+      ["We usually check in once",2],
+      ["We follow up only if we remember",1],
+      ["We tend to leave it to them",0]
+    ]},
+  // 15
+  { scored:true, area:"signups",
+    text:"When a parent asks about fees, what usually happens next?",
+    options:[
+      ["We talk through the value and most conversations continue",3],
+      ["We send the fees, and some go quiet",2],
+      ["We send the fees, and often hear nothing back",1],
+      ["The price question tends to end things",0]
+    ]},
+  // 16
+  { scored:true, area:"keeping",
+    text:"How full is your centre right now?",
+    options:[
+      ["Full, with a waiting list",3],
+      ["Mostly full",2],
+      ["About half full",1],
+      ["Plenty of space",0]
+    ]},
+  // 17
+  { scored:true, area:"keeping",
+    text:"How long does a typical student stay enrolled?",
+    options:[
+      ["A few years, until they age out or move on",3],
+      ["Two years or so",2],
+      ["About a year, then many leave",1],
+      ["Less than a year for many",0]
+    ]},
+  // 18
+  { scored:true, area:"keeping",
+    text:"Do happy families recommend you to others without being asked?",
+    options:[
+      ["Often",3],
+      ["Sometimes",2],
+      ["Rarely",1],
+      ["Not sure",0]
+    ]},
+  // 19
+  { scored:false, key:"ads",
+    text:"Are you running any paid ads at the moment?",
+    options:[
+      "Yes, on Facebook or Instagram",
+      "Yes, on Google",
+      "Yes, on more than one of these",
+      "Not now, but we've run ads before",
+      "No, we've never run ads"
+    ]},
+  // 20
+  { scored:false, key:"spend",
+    text:"Roughly how much do you spend on marketing each month?",
+    options:[
+      "Nothing yet",
+      "Under $500",
+      "$500 to $1,000",
+      "$1,000 to $3,000",
+      "More than $3,000"
+    ]},
+  // 21
+  { scored:false, key:"whoHandles",
+    text:"Who currently handles your marketing?",
+    options:[
+      "I manage it myself, or our internal team handles it",
+      "A marketing agency",
+      "A freelance marketer",
+      "We're not doing any online marketing right now"
+    ]},
+  // 22
+  { scored:false, key:"aiUse",
+    text:"Are you using AI in your marketing or operations yet?",
+    options:[
+      "Yes, quite a bit",
+      "A little, still finding our feet",
+      "Not yet, but keen to",
+      "Not really"
+    ]},
+  // 23
+  { scored:false, key:"intent",
+    text:"Last one. What would be most useful to you after this?",
+    options:[
+      "A free marketing review and strategy session for my centre",
+      "Just my results and a few pointers is great for now"
+    ]}
+];
+
+/* ============================================================
+   RESULT COPY  (verbatim)
+   ============================================================ */
+const OVERALL = {
+  high:"Your enrolment marketing is in great shape, and you're clearly doing a lot right. Since your foundation is already solid, your next step is just making a few small tweaks to push your student numbers even higher.",
+  middle:"You've built a solid foundation. Several of your marketing efforts are working well, and focusing on just a few key areas will make a noticeable difference in your enrolment numbers.",
+  low:"There's definitely some room to grow your marketing, which is actually a great place to be. It just means you have some really clear opportunities to make a few quick adjustments and start seeing a noticeable boost in your student numbers."
+};
+
+const STRENGTHS = {
+  found:"Parents can find you, which is a real advantage. You're showing up when families search online, and your new students aren't all coming from word of mouth. So you're not waiting around for someone to refer you, parents are discovering you on their own.",
+  trust:"When parents look you up, they like what they find. Your reviews and your online presence are already giving families good reasons to trust you before they even message, which makes it so much easier to win them over later.",
+  enquiries:"You're on top of your enquiries, which not every centre can say. Parents hear back from you quickly, even in the evenings and at weekends, and you've got a clear way of keeping track so no one slips through. That speed really matters, because the centre that replies first usually gets the visit.",
+  signups:"You're good at turning interest into actual enrolments. The parents who reach out are getting invited in, and you're following up with the ones who don't sign up right away. So the families you work hard to attract aren't slipping away after that first message.",
+  keeping:"You're holding on to your families, and they're bringing you more. You're full or close to it, your students are staying, and happy parents are recommending you to others. When that's working, a good chunk of your growth takes care of itself."
+};
+
+const OPPORTUNITY = {
+  found:{
+    paras:[
+      "Right now, most of your new families are finding you through word of mouth. That's great, it means people trust you, but it only really reaches parents who are already close to your circle. The thing is, there are parents nearby searching for a centre like yours this week who just never come across you.",
+      "Two things have changed how parents look for centres. Google now shows a little map with reviews before it shows any websites, and more and more parents are simply asking ChatGPT or Google's AI to recommend a centre near them. Most education centres don't show up in either, so this is a real chance to get ahead of them."
+    ],
+    bullets:[
+      "Set up your free Google Business Profile, that's the map listing with your reviews. It's usually the very first thing a searching parent sees.",
+      "Write your website in plain, simple language that says where you are and what you do, so Google and AI tools can actually pick you up and recommend you.",
+      "Start getting in front of local parents who don't know you yet, instead of waiting for the next referral to come."
+    ]},
+  trust:{
+    paras:[
+      "Before a parent ever messages you, they're looking you up, and what they find pretty much decides whether they bother reaching out at all. At the moment there's not a lot there for them to go on. When a parent sees only a couple of old reviews, or a page that's gone quiet, they start to wonder, and usually they just move on to the next centre."
+    ],
+    bullets:[
+      "Ask a few of your happiest families to leave you a quick Google review. A handful of recent ones does more for you than a big pile from three years ago.",
+      "Post on your socials now and then, even once a week. It tells a parent checking you out that you're active and you care.",
+      "Put some real proof on your website, a few photos and a parent telling you in their own words what their child got out of being with you."
+    ]},
+  enquiries:{
+    paras:[
+      "When you're busy running a centre, enquiries get answered whenever you get a free moment, which is completely normal. Here's what most owners don't realise though. A lot of parents send their enquiries in the evenings or over the weekend, exactly when you're not at your desk. And while they're waiting to hear back from you, they're usually messaging two or three other centres too. The one who replies first tends to get the visit."
+    ],
+    bullets:[
+      "Set up an instant first reply, even a basic automated one, so a parent messaging you at 9pm gets something back straight away.",
+      "Pick one place where you both log every enquiry and follow-up, so nothing gets lost on a hectic day.",
+      "A quick, friendly reply that answers their question and offers them a time to come visit beats a long one that lands two days later."
+    ]},
+  signups:{
+    paras:[
+      "Getting parents interested is honestly the hardest part, and you're already doing it. Where it tends to fall apart is everything that happens after that first message. This is the bit where centres quietly lose people without even noticing. A parent asks about your fees, you send the number, and they go quiet. Or they come for one visit and then never hear from you again. Interest fades really fast when nothing happens next."
+    ],
+    bullets:[
+      "When a parent asks about fees, talk about what they're getting before you give the number, so the price has some context. A bare figure on its own just invites a no.",
+      "Invite every parent who enquires to come in for a visit or a trial, and give them an actual time to choose rather than leaving it open-ended.",
+      "Follow up nicely with the parents who don't sign up straight away. Most families need more than one nudge, and these are people who already put their hand up."
+    ]},
+  keeping:{
+    paras:[
+      "There's room to grow here in two ways, how full you are, and how often your families bring other families to you. Parents who stick around and recommend you are about the cheapest way to grow there is, but most centres just leave it to chance and hope it happens."
+    ],
+    bullets:[
+      "Make asking for a referral a normal, easy part of a happy family's time with you, not some awkward big ask.",
+      "Little things that make families feel looked after, a note home, remembering a birthday, keep them around longer and get them talking about you.",
+      "Keep in gentle touch with families even after they leave on good terms. The child moves on, but the parent can still recommend you for years."
+    ]}
+};
+
+const NO_WEAKNESS = "Honestly, there's no obvious weak spot here. Keep doing what's working and stay consistent.";
+
+const RESULT_HEADING = "How effective your centre's marketing is right now.";
+
+const STRATEGY = {
+  intro:"Thanks for indicating your interest in a marketing strategy session. To make sure the session is highly valuable for you, we fully customise each call based on your specific goals. Because of the prep work involved, we can only open up a few slots each month for centres where we're confident we can drive real results.",
+  fitYes:"Based on your answers, yours looks like a strong fit.",
+  fitNo:"Tell us a bit more about your centre and we'll let you know if it's a match.",
+  close:"Let's set up a time to talk.",
+  button:"Claim Your Free Marketing Strategy"
+};
+
+const KEEP_IN_TOUCH = "We’ve sent a copy of these results straight to your email. Moving forward, we'll occasionally share some practical marketing tips to help you grow your centre. And if you ever want us to look over your current strategy with you, just drop us a message anytime.";
+
+const HONEST_NOTE = "A quick note: This assessment is based entirely on your quiz answers, not a direct audit of your actual ad accounts. It’s meant to be a helpful guide for your next steps.";
+
+/* ============================================================
+   STATE  (kept in memory only, no storage)
+   ============================================================ */
+const state = {
+  screen:"intro",            // "intro" | qIndex(0..28) | "lead" | "result"
+  answers:new Array(QUESTIONS.length).fill(null),
+  lead:{ name:"", centre:"", email:"", whatsapp:"" }
+};
+
+const app = document.getElementById("app");
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* ---------- helpers ---------- */
+function esc(s){
+  return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+}
+function optLabel(q,i){
+  return q.scored ? q.options[i][0] : q.options[i];
+}
+function optPts(q,i){
+  return q.scored ? q.options[i][1] : 0;
+}
+
+/* ============================================================
+   RENDERERS
+   ============================================================ */
+function render(){
+  if(state.screen==="intro")      renderIntro();
+  else if(state.screen==="lead")  renderLead();
+  else if(state.screen==="result")renderResult();
+  else                            renderQuestion(state.screen);
+  app.scrollTop=0;
+  window.scrollTo(0,0);
+}
+
+function renderIntro(){
+  app.innerHTML = `
+    <div class="screen">
+      <p class="eyebrow">SocialFin</p>
+      <h1>How effective is your centre's enrolment marketing?</h1>
+      <p class="subtitle">For preschools, enrichment and tuition centres in Singapore.</p>
+      <p class="intro-line">Answer a few questions on how your centre currently attracts new enquiries and maintains your student numbers. By the end of this quiz, you’ll get:</p>
+      <ul class="bullets">
+        <li>A clear breakdown of your marketing across the 5 key areas that drive enrolments.</li>
+        <li>Confirmation of what’s already working well for you.</li>
+        <li>Your biggest area for growth, with practical steps you can implement this week.</li>
+      </ul>
+      <p class="meta">Takes about six minutes.</p>
+      <div class="nav-row">
+        <button class="btn btn-primary" id="start">Start</button>
+      </div>
+    </div>`;
+  document.getElementById("start").addEventListener("click",()=>{ state.screen=0; render(); });
+}
+
+function renderQuestion(i){
+  const q = QUESTIONS[i];
+  const total = QUESTIONS.length;
+  const pct = ((i+1)/total)*100;
+  const sel = state.answers[i];
+
+  const opts = q.options.map((_,idx)=>{
+    const checked = sel===idx;
+    return `<button class="option" role="radio" aria-checked="${checked}" data-idx="${idx}">
+      <span class="dot" aria-hidden="true"></span>
+      <span>${esc(optLabel(q,idx))}</span>
+    </button>`;
+  }).join("");
+
+  app.innerHTML = `
+    <div class="screen">
+      <div class="progress-head">
+        <span class="progress-count">Question ${i+1} of ${total}</span>
+      </div>
+      <div class="progress-track"><div class="progress-fill" style="width:${pct}%"></div></div>
+      <p class="question-text">${esc(q.text)}</p>
+      <div class="options" role="radiogroup" aria-label="${esc(q.text)}">${opts}</div>
+      <div class="nav-row">
+        <button class="btn btn-ghost" id="back">Back</button>
+        <button class="btn btn-primary" id="next" ${sel===null?"disabled":""}>Next</button>
+      </div>
+    </div>`;
+
+  app.querySelectorAll(".option").forEach(btn=>{
+    btn.addEventListener("click",()=>{
+      const idx = parseInt(btn.dataset.idx,10);
+      state.answers[i]=idx;
+      app.querySelectorAll(".option").forEach(b=>b.setAttribute("aria-checked", b.dataset.idx===String(idx)?"true":"false"));
+      document.getElementById("next").disabled=false;
+    });
+  });
+
+  document.getElementById("back").addEventListener("click",()=>{
+    if(i===0) state.screen="intro";
+    else state.screen=i-1;
+    render();
+  });
+  document.getElementById("next").addEventListener("click",()=>{
+    if(state.answers[i]===null) return;
+    if(i===total-1) state.screen="lead";
+    else state.screen=i+1;
+    render();
+  });
+}
+
+function renderLead(){
+  app.innerHTML = `
+    <div class="screen">
+      <p class="eyebrow">Almost there</p>
+      <h1>Where should we send your result?</h1>
+      <form id="leadForm" novalidate>
+        <div class="field">
+          <label for="f-name">Name <span class="req">*</span></label>
+          <input id="f-name" type="text" autocomplete="name" required value="${esc(state.lead.name)}">
+          <div class="err" id="e-name">Please enter your name.</div>
+        </div>
+        <div class="field">
+          <label for="f-centre">Centre name <span class="req">*</span></label>
+          <input id="f-centre" type="text" autocomplete="organization" required value="${esc(state.lead.centre)}">
+          <div class="err" id="e-centre">Please enter your centre name.</div>
+        </div>
+        <div class="field">
+          <label for="f-email">Email <span class="req">*</span></label>
+          <input id="f-email" type="email" autocomplete="email" inputmode="email" required value="${esc(state.lead.email)}">
+          <div class="err" id="e-email">Please enter your email address.</div>
+        </div>
+        <div class="field">
+          <label for="f-wa">WhatsApp number <span class="req">*</span></label>
+          <input id="f-wa" type="tel" autocomplete="tel" inputmode="tel" required placeholder="e.g. 9123 4567" value="${esc(state.lead.whatsapp)}">
+          <div class="err" id="e-wa">Please enter your WhatsApp number.</div>
+        </div>
+        <p class="consent">By continuing, you're happy for us to email your result and the occasional useful note for education centres. You can unsubscribe any time.</p>
+        <div class="nav-row">
+          <button type="button" class="btn btn-ghost" id="back">Back</button>
+          <button type="submit" class="btn btn-primary" id="see">Send me my results</button>
+        </div>
+      </form>
+    </div>`;
+
+  document.getElementById("back").addEventListener("click",()=>{
+    state.screen=QUESTIONS.length-1;
+    render();
+  });
+
+  document.getElementById("leadForm").addEventListener("submit",(ev)=>{
+    ev.preventDefault();
+    const name=document.getElementById("f-name").value.trim();
+    const centre=document.getElementById("f-centre").value.trim();
+    const email=document.getElementById("f-email").value.trim();
+    const wa=document.getElementById("f-wa").value.trim();
+
+    const nameOk = !!name;
+    const centreOk = !!centre;
+    const emailOk = !!email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    const waOk = !!wa && isValidSGNumber(wa);
+
+    setFieldError("name", nameOk, "Please enter your name.");
+    setFieldError("centre", centreOk, "Please enter your centre name.");
+    setFieldError("email", emailOk, !email
+      ? "Please enter your email address."
+      : "Please enter a valid email address, e.g. name@example.com.");
+    setFieldError("wa", waOk, !wa
+      ? "Please enter your WhatsApp number."
+      : "Please enter a valid Singapore number, e.g. 9123 4567 or +65 9123 4567.");
+
+    const ok = nameOk && centreOk && emailOk && waOk;
+    if(!ok){
+      const order=["name","centre","email","wa"];
+      const firstInvalid = order.find(f=>{
+        if(f==="name") return !nameOk;
+        if(f==="centre") return !centreOk;
+        if(f==="email") return !emailOk;
+        if(f==="wa") return !waOk;
+      });
+      if(firstInvalid){
+        const el=document.getElementById("f-"+firstInvalid);
+        el.scrollIntoView({behavior:"smooth", block:"center"});
+        el.focus();
+      }
+      return;
+    }
+
+    state.lead={ name, centre, email, whatsapp:wa };
+    state.screen="result";
+    submitPayload();
+    render();
+  });
+}
+function setFieldError(field, valid, message){
+  const input=document.getElementById("f-"+field);
+  const err=document.getElementById("e-"+field);
+  if(valid){
+    input.classList.remove("invalid");
+    err.classList.remove("show");
+  } else {
+    input.classList.add("invalid");
+    if(message) err.textContent=message;
+    err.classList.add("show");
+  }
+}
+
+// Accepts Singapore mobile numbers only (landlines start with 6 and can't
+// receive WhatsApp). Strips spaces, dashes, brackets, and an optional
+// leading + or 65/0065 country code, then checks for 8 digits starting
+// with 8 or 9.
+function isValidSGNumber(raw){
+  let digits = raw.replace(/[^\d]/g,"");
+  if(digits.startsWith("0065")) digits = digits.slice(4);
+  else if(digits.startsWith("65") && digits.length>8) digits = digits.slice(2);
+  return /^[89]\d{7}$/.test(digits);
+}
+
+/* ============================================================
+   SCORING
+   ============================================================ */
+function computeScores(){
+  const scores={}; AREAS.forEach(a=>scores[a.key]=0);
+  QUESTIONS.forEach((q,i)=>{
+    if(q.scored && state.answers[i]!==null){
+      scores[q.area]+=optPts(q,state.answers[i]);
+    }
+  });
+  const total=AREAS.reduce((s,a)=>s+scores[a.key],0);
+
+  const band = total>=32 ? "high" : (total>=16 ? "middle" : "low");
+
+  const pct={};
+  AREAS.forEach(a=>{ pct[a.key]=Math.round((scores[a.key]/a.max)*100); });
+
+  // lowest area by share of own max; tie -> earliest in AREAS order
+  let lowest=AREAS[0].key, lowestShare=scores[AREAS[0].key]/AREAS[0].max;
+  AREAS.forEach(a=>{
+    const share=scores[a.key]/a.max;
+    if(share<lowestShare-1e-9){ lowestShare=share; lowest=a.key; }
+  });
+
+  // opportunity area: lowest by share among these four only.
+  // "Keeping families and earning referrals" is never the opportunity.
+  // Tie -> earliest in OPP_KEYS order.
+  const OPP_KEYS=["found","trust","enquiries","signups"];
+  let oppArea=OPP_KEYS[0];
+  let oppShare=scores[oppArea]/AREAS.find(a=>a.key===oppArea).max;
+  OPP_KEYS.forEach(k=>{
+    const a=AREAS.find(x=>x.key===k);
+    const share=scores[k]/a.max;
+    if(share<oppShare-1e-9){ oppShare=share; oppArea=k; }
+  });
+
+  // strengths: every area at/above cutoff; else single highest by share
+  let strengths=AREAS.filter(a=>scores[a.key]>=a.cutoff).map(a=>a.key);
+  if(strengths.length===0){
+    let top=AREAS[0].key, topShare=scores[AREAS[0].key]/AREAS[0].max;
+    AREAS.forEach(a=>{
+      const share=scores[a.key]/a.max;
+      if(share>topShare+1e-9){ topShare=share; top=a.key; }
+    });
+    strengths=[top];
+  }
+
+  return { scores, total, band, pct, lowest, lowestShare, oppArea, oppShare, strengths };
+}
+
+/* ============================================================
+   QUALIFIES + payload
+   ============================================================ */
+function getAnswerText(key){
+  const i=QUESTIONS.findIndex(q=>q.key===key);
+  if(i<0 || state.answers[i]===null) return null;
+  return optLabel(QUESTIONS[i], state.answers[i]);
+}
+
+function computeQualifies(){
+  const type=getAnswerText("centreType");
+  const spend=getAnswerText("spend");
+  return FIT_TYPES.includes(type) && FIT_SPEND.includes(spend);
+}
+
+function submitPayload(){
+  const sc=computeScores();
+  const qualifies=computeQualifies();
+
+  const areaScores={};
+  AREAS.forEach(a=>{
+    areaScores[a.key]={ name:a.name, raw:sc.scores[a.key], max:a.max, percent:sc.pct[a.key] };
+  });
+
+  const payload={
+    contact:{
+      name:state.lead.name,
+      centreName:state.lead.centre,
+      email:state.lead.email,
+      whatsapp:state.lead.whatsapp
+    },
+    qualifyingAnswers:{
+      centreType:getAnswerText("centreType"),
+      locations:getAnswerText("locations"),
+      ads:getAnswerText("ads"),
+      monthlySpend:getAnswerText("spend"),
+      whoHandlesMarketing:getAnswerText("whoHandles"),
+      aiUse:getAnswerText("aiUse"),
+      intent:getAnswerText("intent")
+    },
+    areaScores:areaScores,
+    overallScore:sc.total,        // out of 48, never shown to user
+    overallMax:48,
+    band:sc.band,                 // high | middle | low
+    lowestArea:sc.lowest,
+    qualifies:qualifies,
+    timestamp:new Date().toISOString()
+  };
+
+  // TODO: this is where the results email gets wired up later.
+  console.log("Enrolment quiz submission:", payload);
+
+  if(MAKE_WEBHOOK_URL){
+    fetch(MAKE_WEBHOOK_URL,{
+      method:"POST",
+      headers:{ "Content-Type":"application/json" },
+      body:JSON.stringify(payload)
+    }).catch(err=>console.error("Webhook POST failed:", err));
+  }
+
+  // GHL CRM sync: flat payload so every quiz answer maps cleanly onto a
+  // contact custom field via the Inbound Webhook trigger's field picker.
+  if(GHL_WEBHOOK_URL){
+    const ghlPayload={
+      email:state.lead.email,
+      phone:state.lead.whatsapp,
+      full_name:state.lead.name,
+      company_name:state.lead.centre,
+      quiz_centre_type:payload.qualifyingAnswers.centreType,
+      quiz_locations:payload.qualifyingAnswers.locations,
+      quiz_running_ads:payload.qualifyingAnswers.ads,
+      quiz_monthly_spend:payload.qualifyingAnswers.monthlySpend,
+      quiz_who_handles_marketing:payload.qualifyingAnswers.whoHandlesMarketing,
+      quiz_ai_use:payload.qualifyingAnswers.aiUse,
+      quiz_intent:payload.qualifyingAnswers.intent,
+      quiz_score_getting_found:areaScores.found.raw,
+      quiz_score_trust:areaScores.trust.raw,
+      quiz_score_enquiries:areaScores.enquiries.raw,
+      quiz_score_signups:areaScores.signups.raw,
+      quiz_score_keeping:areaScores.keeping.raw,
+      quiz_overall_score:sc.total,
+      quiz_overall_max:48,
+      quiz_band:sc.band,
+      quiz_lowest_area:sc.lowest,
+      quiz_qualifies:qualifies,
+      quiz_completed_at:payload.timestamp
+    };
+    fetch(GHL_WEBHOOK_URL,{
+      method:"POST",
+      headers:{ "Content-Type":"application/json" },
+      body:JSON.stringify(ghlPayload)
+    }).catch(err=>console.error("GHL webhook POST failed:", err));
+  }
+
+  // Meta Pixel: report the completed quiz back to Meta for optimisation
+  // and retargeting. Lead is the standard event Meta uses for reporting/
+  // bidding; QuizCompletion is a custom event for finer-grained tracking.
+  if(typeof fbq==="function"){
+    fbq('track','Lead',{
+      content_name:'Enrolment Marketing Quiz',
+      status:qualifies ? 'qualified' : 'not_qualified'
+    });
+    fbq('trackCustom','QuizCompletion',{
+      band:sc.band,
+      qualifies:qualifies
+    });
+  }
+}
+
+/* ============================================================
+   RESULT SCREEN
+   ============================================================ */
+function renderResult(){
+  const sc=computeScores();
+  const qualifies=computeQualifies();
+
+  // bars
+  const bars=AREAS.map(a=>`
+    <div class="bar-row">
+      <div class="bar-label">${esc(a.name)}</div>
+      <div class="bar-track">
+        <div class="bar-fill" style="--w:${sc.pct[a.key]}%"></div>
+      </div>
+    </div>`).join("");
+
+  // strengths
+  const strengthHtml=sc.strengths.map(k=>{
+    const a=AREAS.find(x=>x.key===k);
+    return `<div class="strength-item">
+      <h3>${esc(a.name)}</h3>
+      <p>${esc(STRENGTHS[k])}</p>
+    </div>`;
+  }).join("");
+
+  // opportunity
+  let oppHtml;
+  if(sc.oppShare>=1-1e-9){
+    oppHtml=`<p>${esc(NO_WEAKNESS)}</p>`;
+  } else {
+    const a=AREAS.find(x=>x.key===sc.oppArea);
+    const blk=OPPORTUNITY[sc.oppArea];
+    oppHtml=`<h2 class="block-area">${esc(a.name)}</h2>`
+      + blk.paras.map(p=>`<p>${esc(p)}</p>`).join("")
+      + `<ul class="bullets">${blk.bullets.map(b=>`<li>${esc(b)}</li>`).join("")}</ul>`;
+  }
+
+  // closing block — the CTA button always shows, regardless of what was
+  // picked on the intent question. Only the framing copy above it changes.
+  const intent=getAnswerText("intent");
+  const wantsStrategy = intent==="A free marketing review and strategy session for my centre";
+  const CTA_LABEL = "Want a more detailed expert overview into our results?";
+  let introHtml;
+  if(wantsStrategy){
+    const fitLine = qualifies ? STRATEGY.fitYes : STRATEGY.fitNo;
+    introHtml=`<p>${esc(STRATEGY.intro)} ${esc(fitLine)} ${esc(STRATEGY.close)}</p>`;
+  } else {
+    introHtml=`<p>${esc(KEEP_IN_TOUCH)}</p>`;
+  }
+  const closingHtml=`<div class="closing">
+    ${introHtml}
+    <a class="btn btn-primary" href="${esc(BOOKING_LINK)}" target="_blank" rel="noopener">${esc(CTA_LABEL)}</a>
+  </div>`;
+
+  app.innerHTML=`
+    <div class="screen result">
+      <p class="eyebrow">Your result</p>
+      <h1>${esc(RESULT_HEADING)}</h1>
+
+      <p class="result-overall">${esc(OVERALL[sc.band])}</p>
+
+      <div class="bars">${bars}</div>
+
+      <p class="section-title">What's working</p>
+      ${strengthHtml}
+
+      <p class="section-title">Your biggest opportunity to bring in more families.</p>
+      ${oppHtml}
+
+      ${closingHtml}
+
+      <p class="honest-note">${esc(HONEST_NOTE)}</p>
+    </div>`;
+}
+
+/* ---------- go ---------- */
+render();
+</script>
+</body>
+</html>
