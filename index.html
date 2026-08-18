@@ -729,7 +729,7 @@ const STRATEGY = {
   button:"Claim Your Free Marketing Strategy"
 };
 
-const KEEP_IN_TOUCH = "We’ve sent a copy of these results straight to your email. Moving forward, we'll occasionally share some practical marketing tips to help you grow your centre. And if you ever want us to look over your current strategy with you, just drop us a message anytime.";
+const KEEP_IN_TOUCH = "Moving forward, we'll occasionally share some practical marketing tips to help you grow your education centre. And if you ever want us to look over your current strategy with you, just drop us a message anytime.";
 
 const HONEST_NOTE = "A quick note: This assessment is based entirely on your quiz answers, not a direct audit of your actual ad accounts. It’s meant to be a helpful guide for your next steps.";
 
@@ -1114,7 +1114,7 @@ function buildResultsEmailHtml(sc, qualifies){
   ${oppHtml}
   <div style="background:#F5F0E6;border-radius:12px;padding:20px;margin:28px 0 0;">
     <p style="margin:0 0 14px;${f}font-size:14px;line-height:1.5;color:#1A2E40;">${esc(qualifies ? STRATEGY.fitYes : STRATEGY.fitNo)}</p>
-    <a href="${esc(BOOKING_LINK)}" style="display:inline-block;background:#E8A33D;color:#1A2E40;text-decoration:none;font-weight:bold;${f}font-size:15px;padding:14px 22px;border-radius:10px;">Want a more detailed expert overview into our results?</a>
+    <a href="${esc(BOOKING_LINK)}" style="display:inline-block;background:#E8A33D;color:#1A2E40;text-decoration:none;font-weight:bold;${f}font-size:15px;padding:14px 22px;border-radius:10px;">Want a more detailed expert overview into the results?</a>
   </div>
 </div>`.trim();
 }
@@ -1264,7 +1264,7 @@ function renderResult(){
   // picked on the intent question. Only the framing copy above it changes.
   const intent=getAnswerText("intent");
   const wantsStrategy = intent==="A free marketing review and strategy session for my centre";
-  const CTA_LABEL = "Want a more detailed expert overview into our results?";
+  const CTA_LABEL = "Want a more detailed expert overview into the results?";
   let introHtml;
   if(wantsStrategy){
     const fitLine = qualifies ? STRATEGY.fitYes : STRATEGY.fitNo;
