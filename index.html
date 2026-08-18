@@ -722,7 +722,7 @@ const NO_WEAKNESS = "Honestly, there's no obvious weak spot here. Keep doing wha
 const RESULT_HEADING = "How effective your centre's marketing is right now.";
 
 const STRATEGY = {
-  intro:"Thanks for indicating your interest in a marketing strategy session. To make sure the session is highly valuable for you, we fully customise each call based on your specific goals. Because of the prep work involved, we can only open up a few slots each month for centres where we're confident we can drive real results.",
+  intro:"Thanks for indicating your interest in a marketing review session. To make sure the review is highly valuable for you, we fully customise each call based on your specific goals. Because of the prep work involved, we can only open up a few slots each month for centres where we're confident we can generate results.",
   fitYes:"Based on your answers, yours looks like a strong fit.",
   fitNo:"Tell us a bit more about your centre and we'll let you know if it's a match.",
   close:"Let's set up a time to talk.",
@@ -1267,8 +1267,7 @@ function renderResult(){
   const CTA_LABEL = "Want a more detailed expert overview into the results?";
   let introHtml;
   if(wantsStrategy){
-    const fitLine = qualifies ? STRATEGY.fitYes : STRATEGY.fitNo;
-    introHtml=`<p>${esc(STRATEGY.intro)} ${esc(fitLine)} ${esc(STRATEGY.close)}</p>`;
+    introHtml=`<p>${esc(STRATEGY.intro)} ${esc(STRATEGY.close)}</p>`;
   } else {
     introHtml=`<p>${esc(KEEP_IN_TOUCH)}</p>`;
   }
